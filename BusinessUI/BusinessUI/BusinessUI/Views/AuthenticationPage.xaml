@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             BackgroundImageSource="{Binding BackgroundImage}"
+             x:Class="BusinessUI.Views.AuthenticationPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="MediumPurple" />
+                <!--<Setter Property="Shell.ForegroundColor" Value="White" />
+                <Setter Property="Shell.TitleColor" Value="White" />
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="MediumPurple" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="White"/>-->
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid RowSpacing="25">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+
+            <Label Grid.Row="0"
+                   Text="{Binding HeaderText}"
+                   Grid.ColumnSpan="3"
+                   HorizontalOptions="CenterAndExpand" 
+                   VerticalOptions="CenterAndExpand"
+                   FontAttributes="Bold"
+                   FontSize="37"
+                   TextColor="DarkSlateBlue"
+                   Padding="0, 10, 0, 0"/>
+
+            <Grid Grid.Row="1" Grid.ColumnSpan="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Frame VerticalOptions="CenterAndExpand" 
+                       HorizontalOptions="FillAndExpand" 
+                       CornerRadius="10"
+                       Grid.Row="0"
+                       Padding="10"
+                       Margin="15, 0, 15, 0">
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="{Binding EmailEntryImage}" HeightRequest="40" VerticalOptions="Center" HorizontalOptions="Center"/>
+                        <Entry
+                            VerticalOptions="CenterAndExpand"
+                            HorizontalOptions="FillAndExpand"
+                            BackgroundColor="Transparent"
+                            HeightRequest="60"
+                            Text="{Binding Email}"
+                            Placeholder="{Binding EmailEntryText}"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame VerticalOptions="CenterAndExpand" 
+                       HorizontalOptions="FillAndExpand" 
+                       CornerRadius="10"
+                       Grid.Row="1"
+                       Padding="10"
+                       Margin="15, 0, 15, 0">
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="{Binding PasswordEntryImage}" HeightRequest="40"  VerticalOptions="Center" HorizontalOptions="Center"/>
+                        <Entry
+                            VerticalOptions="CenterAndExpand"
+                            HorizontalOptions="FillAndExpand"
+                            BackgroundColor="Transparent"
+                            HeightRequest="60"
+                            Text="{Binding Password}"
+                            Placeholder="{Binding PasswordEntryText}"/>
+                    </StackLayout>
+                </Frame>
+
+                <StackLayout 
+                         Grid.Row="2"
+                         Orientation="Horizontal" 
+                         HeightRequest="50"
+                         VerticalOptions="CenterAndExpand"
+                         HorizontalOptions="Fill"
+                         Margin="10, 0, 10, 0">
+
+                    <StackLayout Orientation="Horizontal">
+                        <CheckBox Color="DarkSlateBlue" 
+                          BackgroundColor="Transparent"
+                          HorizontalOptions="StartAndExpand" 
+                          VerticalOptions="CenterAndExpand"
+                          IsChecked="{Binding IsRememberMe, Mode=TwoWay}"/>
+                        <Label TextColor="Black" 
+                       FontSize="16" 
+                       VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="StartAndExpand"
+                       Text="{Binding RememberMeText}"/>
+                    </StackLayout>
+                    <Label Text="{Binding ForgottenPasswordText}" FontSize="16" 
+                       VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ForgottenPasswordCommand}">
+                            </TapGestureRecognizer>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+            </Grid>
+
+            <StackLayout Grid.Row="3" 
+                         Grid.ColumnSpan="3" 
+                         HorizontalOptions="CenterAndExpand" 
+                         VerticalOptions="CenterAndExpand"
+                         Spacing="15">
+                <Button VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="CenterAndExpand"
+                        CornerRadius="5"
+                        WidthRequest="310"
+                        HeightRequest="60"
+                        BackgroundColor="MediumPurple"
+                        Text="{Binding SignInButtonText}"
+                        FontSize="28"
+                        FontAttributes="Bold"
+                        TextColor="White"
+                        Command="{Binding LoginCommand}"/>
+                <Button VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="CenterAndExpand"
+                        CornerRadius="5"
+                        WidthRequest="310"
+                        HeightRequest="60"
+                        BorderColor="MediumPurple"
+                        BorderWidth="2"
+                        BackgroundColor="White"
+                        Text="{Binding CreateAccountButtonText}"
+                        FontSize="28"
+                        FontAttributes="Bold"
+                        TextColor="MediumPurple"
+                        Command="{Binding RegistrationCommand}"
+                        IsVisible="{Binding IsRegistration}"/>
+            </StackLayout>
+
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

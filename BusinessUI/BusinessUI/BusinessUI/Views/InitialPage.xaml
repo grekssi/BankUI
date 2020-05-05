@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="BusinessUI.Views.InitialPage"
+             BackgroundImageSource="{Binding BackgroundImage}">
+    <ContentPage.Content>
+        <StackLayout Spacing="30">
+            <StackLayout Padding="40, 60, 40, 0">
+                <Image Source="{Binding Image}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" HeightRequest="150"/>
+            </StackLayout>
+            <StackLayout HeightRequest="330">
+                <Label Text="{Binding HeaderText}" TextColor="White" FontSize="26" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+            </StackLayout>
+            <StackLayout>
+                <Button VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="CenterAndExpand"
+                        CornerRadius="5"
+                        WidthRequest="310"
+                        HeightRequest="60"
+                        BackgroundColor="MediumPurple"
+                        Text="{Binding ButtonText}"
+                        FontSize="28"
+                        FontAttributes="Bold"
+                        TextColor="White"
+                        Command="{Binding GetStartedCommand}"/>
+
+            </StackLayout>
+            <StackLayout>
+                <Label Text="{Binding NoAccountText}"
+                       TextColor="White"
+                       HorizontalOptions="CenterAndExpand"
+                       FontSize="15">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding RegistrationCommand}">
+                        </TapGestureRecognizer>
+                    </Label.GestureRecognizers>
+                </Label>
+
+                <Label Text="{Binding SignInText}"
+                   TextColor="MediumPurple"
+                   HorizontalOptions="CenterAndExpand"
+                   FontSize="20">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding RegistrationCommand}">
+                        </TapGestureRecognizer>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

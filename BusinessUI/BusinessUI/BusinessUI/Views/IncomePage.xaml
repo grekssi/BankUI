@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+             xmlns:views="clr-namespace:BusinessUI.Views;assembly=BusinessUI"
+             x:Class="BusinessUI.Views.IncomePage"
+             BackgroundColor="LightGray">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout VerticalOptions="FillAndExpand" 
+                         Spacing="7">
+                <Frame HeightRequest="40"
+                       HorizontalOptions="FillAndExpand"
+                       VerticalOptions="Start">
+                    <StackLayout Spacing="-5">
+                        <Label Text="{Binding BalanceText}"
+                               HorizontalOptions="CenterAndExpand" 
+                               VerticalOptions="CenterAndExpand"/>
+                        <Label Text="{Binding Balance, StringFormat='${0}'}"
+                               HorizontalOptions="CenterAndExpand" 
+                               VerticalOptions="CenterAndExpand" 
+                               FontAttributes="Bold" 
+                               FontSize="30"
+                               TextColor="Black"/>
+                    </StackLayout>
+                </Frame>
+                <Frame VerticalOptions="FillAndExpand">
+                    <StackLayout Padding="-10" HorizontalOptions="CenterAndExpand">
+                        <CollectionView ItemsSource="{Binding TimeButtons}" ItemsLayout="HorizontalList" HeightRequest="30" HorizontalOptions="CenterAndExpand">
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Button TextColor="Gray"
+                                                FontSize="12" 
+                                                Padding="0" 
+                                                HeightRequest="30" 
+                                                CornerRadius="30" 
+                                                Text="{Binding ButtonText}"
+                                                BackgroundColor="Transparent" 
+                                                BorderColor="MediumPurple" 
+                                                BorderWidth="{Binding BorderWidth}"
+                                                Command="{Binding ShowIncomes}" CommandParameter="{Binding ButtonId}"/>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+
+                        <StackLayout>
+                            <StackLayout Spacing="-5">
+                                <Label Text="{Binding AssetsText}"
+                                   HorizontalOptions="CenterAndExpand" 
+                                   VerticalOptions="StartAndExpand"/>
+                                <Label TextColor="Black" 
+                                   Text="{Binding Assets, StringFormat='${0}'}" 
+                                   HorizontalOptions="CenterAndExpand"
+                                   VerticalOptions="StartAndExpand"
+                                   FontSize="23" 
+                                   FontAttributes="Bold"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="20, -8, 20, -8">
+                                <StackLayout HorizontalOptions="StartAndExpand" Spacing="-5">
+                                    <Label Text="{Binding IncomeText}"
+                                       HorizontalOptions="CenterAndExpand" 
+                                       VerticalOptions="StartAndExpand"/>
+                                    <Label TextColor="ForestGreen" 
+                                       Text="{Binding Income, StringFormat='${0}'}" 
+                                       HorizontalOptions="CenterAndExpand"
+                                       VerticalOptions="StartAndExpand"
+                                       FontSize="23" 
+                                       FontAttributes="Bold"/>
+                                </StackLayout>
+
+                                <StackLayout HorizontalOptions="EndAndExpand" Spacing="-5">
+                                    <Label Text="{Binding ExpensesText}"
+                                       HorizontalOptions="CenterAndExpand" 
+                                       VerticalOptions="StartAndExpand"/>
+                                    <Label TextColor="Red" 
+                                       Text="{Binding Expenses, StringFormat='${0}'}" 
+                                       HorizontalOptions="CenterAndExpand"
+                                       VerticalOptions="StartAndExpand"
+                                       FontSize="23" 
+                                       FontAttributes="Bold"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Padding="-10">
+                            <CarouselView ItemsSource="{Binding Charts}" HeightRequest="200" HorizontalOptions="CenterAndExpand">
+                                <CarouselView.ItemTemplate>
+                                    <DataTemplate>
+                                        <microcharts:ChartView Chart="{Binding .}" Margin="0, 0, 0, 5"/>
+                                    </DataTemplate>
+                                </CarouselView.ItemTemplate>
+                            </CarouselView>
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="End">
+                            <Label Text="Swipe For Incomes/Expenses Chart" TextColor="Black"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+                <!--<Button 
+                    CornerRadius="50"
+                    HeightRequest="60"
+                    WidthRequest="60"
+                    HorizontalOptions="CenterAndExpand"
+                    Padding="0, -6, 0, 0"
+                    Text="+"
+                    FontSize="50"
+                    TextColor="White"
+                    BackgroundColor="MediumPurple"
+                    Margin="16"/>-->
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

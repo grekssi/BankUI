@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="BusinessUI.Views.CreditCardView">
+    <ContentView.Content>
+        <Frame Margin="20,10,20,10"
+               CornerRadius="10"
+               Padding="20"
+               Visual="Material"
+               BorderColor="Black"
+               BackgroundColor="{Binding CardColor}">
+            <Grid ColumnSpacing="30"
+                  RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Image Source="{Binding CardProviderImage}" 
+                           HeightRequest="40"
+                           Grid.Row="0"
+                           Grid.Column="1"
+                           HorizontalOptions="EndAndExpand"/>
+
+                <Label Text="Card Number"
+                           LineBreakMode="TailTruncation"
+                           FontSize="12"
+                           TextColor="{Binding SecondaryColor}"
+                           Grid.Row="1"
+                           Grid.Column="0"
+                           Grid.ColumnSpan="2"/>
+
+                <Label Text="{Binding CardNumber}"
+                            FontSize="20"
+                            TextColor="{Binding SecondaryColor}"
+                            Grid.Row="2"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="2"/>
+
+                <Label Text="Expiration"
+                           Margin="0,20,0,0"
+                           FontSize="12"
+                           TextColor="{Binding SecondaryColor}"
+                           Grid.Row="3"
+                           Grid.Column="0"/>
+
+                <Label Text="{Binding ExpirationDate}"
+                            FontSize="20"
+                            TextColor="{Binding SecondaryColor}"
+                            Grid.Row="4"
+                            Grid.Column="0"/>
+
+                <Label Text="Cvv"
+                            Margin="0,20,0,0"
+                           FontSize="12"
+                           TextColor="{Binding SecondaryColor}"
+                           Grid.Row="3"
+                           Grid.Column="1"/>
+
+                <Label Text="{Binding Cvv}"
+                            FontSize="20"
+                            TextColor="{Binding SecondaryColor}"
+                            Grid.Row="4"
+                            Grid.Column="1"/>
+            </Grid>
+        </Frame>
+    </ContentView.Content>
+</ContentView>

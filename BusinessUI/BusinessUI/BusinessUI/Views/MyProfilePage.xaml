@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:views="clr-namespace:BusinessUI.Views;assembly=BusinessUI"
+             xmlns:models="clr-namespace:BusinessUI.Models;assembly=BusinessUI"
+             x:Class="BusinessUI.Views.MyProfilePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal" HeightRequest="90" Padding="10, 10, 0, 0">
+                <Image Source="{Binding Login.ProfilePicture}"/>
+                <StackLayout VerticalOptions="CenterAndExpand" Spacing="0">
+                    <Label Text="{Binding Login.Email}" TextColor="Black" FontSize="20" FontAttributes="Bold"/>
+                    <Label Text="{Binding BalanceText}"/>
+                </StackLayout>
+                <Label Text="{Binding Login.Balance, StringFormat='${0:F2}'} "
+                       FontAttributes="Bold"
+                       FontSize="30"
+                       TextColor="MediumPurple"
+                       HorizontalOptions="EndAndExpand" 
+                       VerticalOptions="CenterAndExpand"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" 
+                         HeightRequest="30"
+                         Padding="20, -10, 0, 0" 
+                         Spacing="0">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ShowPersonalInformation}"/>
+                </StackLayout.GestureRecognizers>
+                <Image Source="informatioImage.png" 
+                       VerticalOptions="CenterAndExpand"/>
+                <Label Text="{Binding PersonalInformationText}"
+                       VerticalOptions="CenterAndExpand"/>
+            </StackLayout>
+            <ScrollView VerticalOptions="CenterAndExpand">
+                <StackLayout BindableLayout.ItemsSource="{Binding CallFunctions}" Padding="0, 20, 0, 10" Spacing="10">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <views:CallFunctionView/>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

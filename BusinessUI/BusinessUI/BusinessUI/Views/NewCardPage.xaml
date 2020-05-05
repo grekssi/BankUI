@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:views="clr-namespace:BusinessUI.Views;assembly=BusinessUI"
+             xmlns:behaviors="clr-namespace:BusinessUI.Behaviours;assembly=BusinessUI"
+             mc:Ignorable="d"
+             x:Class="BusinessUI.Views.NewCardPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid VerticalOptions="FillAndExpand"
+              ColumnSpacing="20"
+              HorizontalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+
+                <views:CreditCardView Grid.Row="0"
+                                            Grid.Column="0"
+                                            Grid.ColumnSpan="3"/>
+
+                <Frame HasShadow="false"
+                       Padding="10"
+                       BorderColor="Black"
+                       Margin="30,30,30,10"
+                       Grid.Row="1"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="3">
+                    <StackLayout Spacing="-5">
+                        <Label Text="{Binding CardNumberText}"/>
+
+                        <Entry HorizontalOptions="FillAndExpand"
+                               Keyboard="Numeric"
+                               Text="{Binding CardNumberEntryText}"
+                               Visual="Custom">
+                            <Entry.Behaviors>
+                                <behaviors:EntryLengthValidatorBehavior MaxLength="16"/>
+                            </Entry.Behaviors>
+                        </Entry>
+                    </StackLayout>
+                </Frame>
+
+                <Frame HasShadow="false"
+                      Padding="10"
+                      BorderColor="Black"
+                      Margin="30,0,0,0"
+                      Grid.Row="2"
+                      Grid.Column="0"
+                      Grid.ColumnSpan="2">
+                    <StackLayout Spacing="-5">
+                        <Label Text="{Binding ExpDateText}"/>
+                        <Entry HorizontalOptions="FillAndExpand"
+                               Keyboard="Numeric"
+                               Text="{Binding ExpirationDateEntry}"
+                               Visual="Custom">
+                            <Entry.Behaviors>
+                                <behaviors:EntryLengthValidatorBehavior MaxLength="4"/>
+                            </Entry.Behaviors>
+                        </Entry>
+                    </StackLayout>
+                </Frame>
+
+                <Frame HasShadow="false"
+                       Padding="10"
+                      BorderColor="Black"
+                      Margin="0,0,30,0"
+                      Grid.Row="2"
+                      Grid.Column="2">
+                    <StackLayout Spacing="-5">
+                        <Label Text="{Binding CvvText}"/>
+                        <Entry HorizontalOptions="FillAndExpand"
+                              Keyboard="Numeric"
+                              Text="{Binding CvvEntry}"
+                              Visual="Custom">
+                            <Entry.Behaviors>
+                                <behaviors:EntryLengthValidatorBehavior MaxLength="3"/>
+                            </Entry.Behaviors>
+                        </Entry>
+                    </StackLayout>
+                </Frame>
+
+                <Button Text="{Binding SaveCardText}"
+                        Command="{Binding SaveCardCommand}"
+                         BackgroundColor="Black"
+                         CornerRadius="26"
+                         FontSize="18"
+                         Grid.Row="6"
+                         Grid.Column="0"
+                         Grid.ColumnSpan="3"
+                         Padding="18"
+                         TextColor="White"
+                         Margin="30,0,30,30"/>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
