@@ -24,7 +24,7 @@ namespace BusinessUI.Services
         public const string NewCardPage_ExpirationDateText = "Exp. Date";
         public const string NewCardPage_CvvText = "Cvv";
         public const string MyProfilePage_BalanceText = "Balance";
-        public const string MyProfilePage_PersonalInformationText = "PersonalInformation";
+        public const string MyProfilePage_PersonalInformationText = "Personal Information";
         public const string MyProfilePage_BankPhoneNumber = "0471246382";
         public const string IncomesPage_BalanceText = "Balance";
         public const string IncomesPage_IncomeText = "Income";

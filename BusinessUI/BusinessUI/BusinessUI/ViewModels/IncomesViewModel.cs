@@ -93,8 +93,7 @@ namespace BusinessUI.ViewModels
         {
             //TODO:Helper for entries parsing
             var id = buttonId.ToString();
-            this.TimeButtons.Where(x => x.ButtonId != id).ForEach(x => x.BorderWidth = 0);
-            this.TimeButtons.Where(x => x.ButtonId == id).ForEach(x => x.BorderWidth = 1);
+            ChangeStateOfTimeButtons(id);
             IncomeType enumtype = (IncomeType)Enum.Parse(typeof(IncomeType), id);
             var entries = Helper.GetIncome(enumtype);
             this.Charts = MakeCharts(entries);
@@ -102,6 +101,12 @@ namespace BusinessUI.ViewModels
             OnPropertyChanged(nameof(this.Charts));
             OnPropertyChanged(nameof(Income));
             OnPropertyChanged(nameof(Expenses));
+        }
+
+        private void ChangeStateOfTimeButtons(string id)
+        {
+            this.TimeButtons.Where(x => x.ButtonId != id).ForEach(x => x.BorderWidth = 0);
+            this.TimeButtons.Where(x => x.ButtonId == id).ForEach(x => x.BorderWidth = 1);
         }
 
         private List<Chart> MakeCharts(Tuple<Entry[], Entry[]> entries)

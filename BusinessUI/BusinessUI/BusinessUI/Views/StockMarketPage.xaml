@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+             xmlns:views="clr-namespace:BusinessUI.Views;assembly=BusinessUI"
+             mc:Ignorable="d"
+             x:Class="BusinessUI.Views.StockMarketPage"
+             BackgroundColor="Black">
+    <StackLayout BindableLayout.ItemsSource="{Binding Stocks}"
+                 Margin="8"
+                 Spacing="10">
+        <BindableLayout.ItemTemplate>
+            <DataTemplate>
+                <views:StockView/>
+            </DataTemplate>
+        </BindableLayout.ItemTemplate>
+    </StackLayout>
+</ContentPage>

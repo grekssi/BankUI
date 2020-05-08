@@ -5,14 +5,15 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:views="clr-namespace:BusinessUI.Views;assembly=BusinessUI"
              xmlns:models="clr-namespace:BusinessUI.Models;assembly=BusinessUI"
-             x:Class="BusinessUI.Views.MyProfilePage">
+             x:Class="BusinessUI.Views.MyProfilePage"
+             Shell.NavBarIsVisible="False">
     <ContentPage.Content>
         <StackLayout>
             <StackLayout Orientation="Horizontal" HeightRequest="90" Padding="10, 10, 0, 0">
                 <Image Source="{Binding Login.ProfilePicture}"/>
                 <StackLayout VerticalOptions="CenterAndExpand" Spacing="0">
                     <Label Text="{Binding Login.Email}" TextColor="Black" FontSize="20" FontAttributes="Bold"/>
-                    <Label Text="{Binding BalanceText}"/>
+                    <Label Text="{Binding BalanceText}" FontSize="10"/>
                 </StackLayout>
                 <Label Text="{Binding Login.Balance, StringFormat='${0:F2}'} "
                        FontAttributes="Bold"
@@ -24,14 +25,16 @@
             <StackLayout Orientation="Horizontal" 
                          HeightRequest="30"
                          Padding="20, -10, 0, 0" 
-                         Spacing="0">
+                         Spacing="10">
                 <StackLayout.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding ShowPersonalInformation}"/>
                 </StackLayout.GestureRecognizers>
                 <Image Source="informatioImage.png" 
-                       VerticalOptions="CenterAndExpand"/>
+                       VerticalOptions="CenterAndExpand"
+                       HeightRequest="20"/>
                 <Label Text="{Binding PersonalInformationText}"
-                       VerticalOptions="CenterAndExpand"/>
+                       VerticalOptions="CenterAndExpand" 
+                       FontSize="15"/>
             </StackLayout>
             <ScrollView VerticalOptions="CenterAndExpand">
                 <StackLayout BindableLayout.ItemsSource="{Binding CallFunctions}" Padding="0, 20, 0, 10" Spacing="10">

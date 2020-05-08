@@ -2183,11 +2183,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bedob\\Documents\\GitHub\\BankUI\\BusinessUI\\BusinessUI\\BusinessUI.Android\\BusinessUI.Android.csproj",
+      "projectUniqueName": "C:\\Users\\bedob\\source\\repos\\BusinessUI\\BusinessUI\\BusinessUI.Android\\BusinessUI.Android.csproj",
       "projectName": "BusinessUI.Android",
-      "projectPath": "C:\\Users\\bedob\\Documents\\GitHub\\BankUI\\BusinessUI\\BusinessUI\\BusinessUI.Android\\BusinessUI.Android.csproj",
+      "projectPath": "C:\\Users\\bedob\\source\\repos\\BusinessUI\\BusinessUI\\BusinessUI.Android\\BusinessUI.Android.csproj",
       "packagesPath": "C:\\Users\\bedob\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bedob\\Documents\\GitHub\\BankUI\\BusinessUI\\BusinessUI\\BusinessUI.Android\\obj\\",
+      "outputPath": "C:\\Users\\bedob\\source\\repos\\BusinessUI\\BusinessUI\\BusinessUI.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -2208,8 +2208,8 @@
       "frameworks": {
         "monoandroid90": {
           "projectReferences": {
-            "C:\\Users\\bedob\\Documents\\GitHub\\BankUI\\BusinessUI\\BusinessUI\\BusinessUI\\BusinessUI.csproj": {
-              "projectPath": "C:\\Users\\bedob\\Documents\\GitHub\\BankUI\\BusinessUI\\BusinessUI\\BusinessUI\\BusinessUI.csproj"
+            "C:\\Users\\bedob\\source\\repos\\BusinessUI\\BusinessUI\\BusinessUI\\BusinessUI.csproj": {
+              "projectPath": "C:\\Users\\bedob\\source\\repos\\BusinessUI\\BusinessUI\\BusinessUI\\BusinessUI.csproj"
             }
           }
         }

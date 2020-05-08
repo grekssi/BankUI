@@ -784,11 +784,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bedob\\Documents\\GitHub\\BankUI\\BusinessUI\\BusinessUI\\BusinessUI\\BusinessUI.csproj",
+      "projectUniqueName": "C:\\Users\\bedob\\source\\repos\\BusinessUI\\BusinessUI\\BusinessUI\\BusinessUI.csproj",
       "projectName": "BusinessUI",
-      "projectPath": "C:\\Users\\bedob\\Documents\\GitHub\\BankUI\\BusinessUI\\BusinessUI\\BusinessUI\\BusinessUI.csproj",
+      "projectPath": "C:\\Users\\bedob\\source\\repos\\BusinessUI\\BusinessUI\\BusinessUI\\BusinessUI.csproj",
       "packagesPath": "C:\\Users\\bedob\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bedob\\Documents\\GitHub\\BankUI\\BusinessUI\\BusinessUI\\BusinessUI\\obj\\",
+      "outputPath": "C:\\Users\\bedob\\source\\repos\\BusinessUI\\BusinessUI\\BusinessUI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"

@@ -32,13 +32,16 @@
     <!-- Your Pages -->
     <TabBar>
         <Tab Title="Browse" Icon="tab_feed.png">
-            <ShellContent ContentTemplate="{DataTemplate local:ItemsPage}" />
+            <ShellContent ContentTemplate="{DataTemplate local:ItemsPage}"/>
         </Tab>
         <Tab Title="My Profile" Icon="tab_about.png">
-            <ShellContent ContentTemplate="{DataTemplate local:MyProfilePage}" />
+            <ShellContent ContentTemplate="{DataTemplate local:MyProfilePage}" Shell.NavBarIsVisible="False"/>
         </Tab>
-        <Tab Title="My Expenses" Icon="dollarIconShell.png">
-            <ShellContent ContentTemplate="{DataTemplate local:IncomePage}" />
+        <Tab Title="Stocks" Icon="dollarIconShell.png">
+            <ShellContent ContentTemplate="{DataTemplate local:IncomePage}" Shell.NavBarIsVisible="False"/>
+        </Tab>
+        <Tab Title="My Expenses" Icon="shellPageStocksImage.png">
+            <ShellContent ContentTemplate="{DataTemplate local:StockMarketPage}" Shell.NavBarIsVisible="True"/>
         </Tab>
     </TabBar>
 

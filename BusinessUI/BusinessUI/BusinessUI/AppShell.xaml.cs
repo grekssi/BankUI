@@ -19,6 +19,7 @@ namespace BusinessUI
             Routing.RegisterRoute("NewCardPage", typeof(NewCardPage));
             Routing.RegisterRoute("ItemsPage", typeof(ItemsPage));
             Routing.RegisterRoute("IncomePage", typeof(IncomePage));
+            Routing.RegisterRoute("StockMarketPage", typeof(StockMarketPage));
         }
     }
 }

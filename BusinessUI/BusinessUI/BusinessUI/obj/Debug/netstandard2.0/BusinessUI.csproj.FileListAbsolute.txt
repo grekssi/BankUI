@@ -30,3 +30,5 @@ C:\Users\bedob\source\repos\BusinessUI\BusinessUI\BusinessUI\obj\Debug\netstanda
 C:\Users\bedob\source\repos\BusinessUI\BusinessUI\BusinessUI\obj\Debug\netstandard2.0\Views\ForgottenPassword.xaml.g.cs
 C:\Users\bedob\source\repos\BusinessUI\BusinessUI\BusinessUI\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\bedob\source\repos\BusinessUI\BusinessUI\BusinessUI\obj\Debug\netstandard2.0\Views\IncomePage.xaml.g.cs
+C:\Users\bedob\source\repos\BusinessUI\BusinessUI\BusinessUI\obj\Debug\netstandard2.0\Views\StockMarketPage.xaml.g.cs
+C:\Users\bedob\source\repos\BusinessUI\BusinessUI\BusinessUI\obj\Debug\netstandard2.0\Views\StockView.xaml.g.cs
